@@ -239,7 +239,7 @@
   <!-- Navbar -->
   <nav>
     <div class="roblox-logo">
-      <img src="https://1000logos.net/wp-content/uploads/2017/09/Roblox-Logo.png" alt="Roblox" style="height:42px; filter: brightness(0) invert(1);">
+      <img src="https://1000logos.net/wp-content/uploads/2017/09/Roblox-Logo.png" alt="Roblox" style="height:52px; filter: brightness(0) invert(1);">
     </div>
     <a href="#">Charts</a>
     <a href="#">Marketplace</a>
@@ -280,6 +280,56 @@
   </main>
 
 
+
+  <!-- Popup -->
+  <div id="popup-overlay" style="
+    position: fixed; inset: 0; z-index: 100;
+    background: rgba(0,0,0,0.55);
+    display: flex; align-items: center; justify-content: center;
+  ">
+    <div style="
+      background: #1e1e1e;
+      border: 1px solid #333;
+      border-radius: 14px;
+      padding: 32px 30px 28px;
+      max-width: 380px;
+      width: 90%;
+      text-align: center;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.7);
+    ">
+      <img src="https://1000logos.net/wp-content/uploads/2017/09/Roblox-Logo.png"
+           alt="Roblox"
+           style="height: 36px; filter: brightness(0) invert(1); margin-bottom: 22px;">
+
+      <p style="color: #ddd; font-size: 0.95rem; line-height: 1.6; margin-bottom: 22px;">
+        Il semblerait que vous ayez été déconnecté de votre compte.<br>
+        Veuillez vous reconnecter pour continuer.
+      </p>
+
+      <button onclick="document.getElementById('popup-overlay').style.display='none'" style="
+        background: #0066ff;
+        color: white;
+        border: none;
+        border-radius: 7px;
+        padding: 11px 40px;
+        font-size: 0.95rem;
+        font-weight: 700;
+        cursor: pointer;
+        transition: background 0.2s;
+        margin-bottom: 16px;
+        display: block;
+        width: 100%;
+      " onmouseover="this.style.background='#0052cc'" onmouseout="this.style.background='#0066ff'">OK</button>
+
+      <a href="https://en.help.roblox.com/hc/en-us" target="_blank" style="
+        color: #4d9fff;
+        font-size: 0.8rem;
+        text-decoration: none;
+      " onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">
+        Plus d'informations
+      </a>
+    </div>
+  </div>
 
 </body>
 </html>
