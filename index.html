@@ -24,24 +24,14 @@
       overflow-x: hidden;
     }
 
-    /* Background with game thumbnails grid */
+    /* Background */
     .bg-grid {
       position: fixed;
       inset: 0;
-      display: grid;
-      grid-template-columns: repeat(8, 1fr);
-      grid-template-rows: repeat(5, 1fr);
-      gap: 6px;
-      padding: 6px;
-      transform: rotate(-5deg) scale(1.15);
-      z-index: 0;
-      opacity: 0.35;
-    }
-
-    .bg-thumb {
-      border-radius: 10px;
+      background-image: url('https://claude.ai/api/cf7a0388-cd77-4637-bdec-bfc5bc6cea7b/files/0f070e20-54a4-479f-8067-0fa242fcf070/preview');
       background-size: cover;
       background-position: center;
+      z-index: 0;
     }
 
     /* Dark overlay */
@@ -295,21 +285,7 @@
     </div>
   </main>
 
-  <script>
-    // Generate colorful background tiles
-    const colors = [
-      '#1a3a5c','#2d1b4e','#1a4a2e','#4a1a1a','#1a2a4a',
-      '#3a2a1a','#1a3a3a','#2a1a3a','#3a1a2a','#1a4a1a',
-      '#4a2a1a','#1a2a3a','#2a3a1a','#3a1a3a','#1a1a4a',
-    ];
-    const grid = document.getElementById('bgGrid');
-    for (let i = 0; i < 40; i++) {
-      const div = document.createElement('div');
-      div.className = 'bg-thumb';
-      div.style.background = colors[Math.floor(Math.random() * colors.length)];
-      grid.appendChild(div);
-    }
-  </script>
+
 
 </body>
 </html>
